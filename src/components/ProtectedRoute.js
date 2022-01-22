@@ -1,14 +1,19 @@
-import React from "react";
-import { useUserAuth } from "./Auth";
-import { Navigate } from "react-router-dom";
-
+import { useEffect } from "react";
+import { useNavigate } from "react-router-dom";
+import { auth } from "../config";
+import { onAuthStateChanged } from "firebase/auth";
 
 const ProtectedRoute = ({ children }) => {
-  const { user } = useUserAuth();
-//   console.log("Check user in Private: ", user);
-  if (!user) {
-    return <Navigate to="/login" />;
-  }
+  const navigate = useNavigate();
+  useEffect(() => {
+    const unsubscribe = onAuthStateChanged(auth, (user) => {
+      if(!user){
+        navigate("/login")
+      }
+    });
+    return unsubscribe;
+  }, []);
+
   return children;
 };
 

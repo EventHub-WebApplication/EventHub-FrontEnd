@@ -5,6 +5,7 @@ import { Button, Navbar, Container, Form, Alert } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { Link } from "react-router-dom"
 import { useState } from "react";
+
 const qs = require('qs');
 
 const NewEvent = () => {
@@ -24,25 +25,27 @@ const NewEvent = () => {
         }
     };
 
-    const handleCreate = () => {
-        if (name === "" || amount === null || category === ""){
+    const handleCreate = async () => {
+        if (name === "" || amount === null || category === "") {
             setErr("กรุณาใส่ข้อมูลให้ครบถ้วน")
         }
-        else{
-        axios.post('/events', qs.stringify({ eventId: Date.now(), eventName: name, amount: amount, owner: user.email, categories: category, paticipant: [] }))
-            .then(function (response) {
-                console.log(response);
-            })
-            .catch(function (error) {
-                console.log(error);
-              });}
+        else {
+            await axios.post('/events', qs.stringify({ eventId: Date.now(), eventName: name, amount: amount, owner: user.email, categories: category, paticipant: [] }))
+                .then(function (response) {
+                    console.log(response);
+                })
+                .catch(function (error) {
+                    console.log(error);
+                });
+        }
+        navigate("/home");
     };
 
     return (
         <>
             <Navbar bg="light" expand="lg">
                 <Container>
-                    <Navbar.Brand href="#">EventHub</Navbar.Brand>
+                    <Navbar.Brand href="/home">EventHub</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <div >
@@ -61,13 +64,13 @@ const NewEvent = () => {
                 </Form.Group>
 
                 <Form.Group className="mb-3" controlId="formBasicPassword">
-                    <Form.Label>จำนวนคนที่ขาด</Form.Label>
-                    <Form.Control type="text" placeholder="ใส่จำนวนคนที่ขาด" onChange={(e) => setAmount(e.target.value)} />
+                    <Form.Label>จำนวนคน</Form.Label>
+                    <Form.Control type="text" placeholder="ใส่จำนวนคน" onChange={(e) => setAmount(e.target.value)} />
                 </Form.Group>
                 <Form.Group className="mb-3">
                     <Form.Label htmlFor="disabledSelect">ประเภทของปาร์ตี้</Form.Label>
                     <Form.Select id="disabledSelect" onChange={(e) => setCategory(e.target.value)}>
-                        <option value="ประเภท">ประเภท</option>
+                        <option value="">ประเภท</option>
                         <option value="ดนตรี">ดนตรี</option>
                         <option value="อาหาร">อาหาร</option>
                         <option value="สัมมนา">สัมมนา</option>
