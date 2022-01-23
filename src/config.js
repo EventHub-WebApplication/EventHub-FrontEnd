@@ -3,19 +3,19 @@ import { getAuth } from "firebase/auth";
 
 const firebaseConfig = {
 
-    apiKey: "AIzaSyA6mkSz2IeB-uT_t4o4WhTTvHdUGkEecCI",
+    apiKey: process.env.apiKey,
   
-    authDomain: "eventhub-authv1.firebaseapp.com",
+    authDomain: process.env.authDomain,
   
-    projectId: "eventhub-authv1",
+    projectId: process.env.projectId,
   
-    storageBucket: "eventhub-authv1.appspot.com",
+    storageBucket: process.env.storageBucket,
   
-    messagingSenderId: "125033143707",
+    messagingSenderId: process.env.messagingSenderId,
   
-    appId: "1:125033143707:web:008ae0399a71c9b3eb553e",
+    appId: process.env.appId,
   
-    measurementId: "G-M26H783RFK"
+    measurementId: process.env.measurementId
   
 };
 
