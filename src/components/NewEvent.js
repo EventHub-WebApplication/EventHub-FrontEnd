@@ -26,7 +26,11 @@ const NewEvent = () => {
     };
 
     const handleCreate = async (e) => {
-        if (name === "" || amount === "" || category === "") {
+        if(amount <= 0){
+            setErr("จำนวนคนควรมากกว่า 0")
+            e.preventDefault();
+        }
+        else if (name === "" || amount === "" || category === "") {
             setErr("กรุณาใส่ข้อมูลให้ครบถ้วน")
             e.preventDefault();
         }
@@ -40,7 +44,6 @@ const NewEvent = () => {
                 });
             navigate("/home");
         }
-
     };
 
     return (

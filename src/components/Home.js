@@ -177,7 +177,7 @@ const Home = () => {
             </Card.Text>
             <Card.Title>สรุจ สัตยานุรักษ์</Card.Title>
             <Card.Text>
-              อีเมล saruj.s@ku.th - มือถือ 098-9107588
+              อีเมล saruj.s@ku.th - โทร 098-9107588
             </Card.Text>
             <p></p>
           </Card.Body>
