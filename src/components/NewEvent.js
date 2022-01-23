@@ -31,7 +31,7 @@ const NewEvent = () => {
             e.preventDefault();
         }
         else {
-            await axios.post('/events', qs.stringify({ eventId: Date.now(), eventName: name, amount: amount, owner: user.email, categories: category, paticipant: [] }))
+            await axios.post('https://sheltered-tundra-26707.herokuapp.com/events', qs.stringify({ eventId: Date.now(), eventName: name, amount: amount, owner: user.email, categories: category, paticipant: [] }))
                 .then(function (response) {
                     console.log(response);
                 })
