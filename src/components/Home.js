@@ -24,56 +24,56 @@ const Home = () => {
 
   const getAll = async (e) => {
     setLoading(true);
-    const response = await axios.get("/events");
+    const response = await axios.get("https://sheltered-tundra-26707.herokuapp.com/events");
     setData(response.data);
     setLoading(false);
   }
 
   const getPet = async (e) => {
     setLoading(true);
-    const response = await axios.get("/category/สัตว์เลี้ยง");
+    const response = await axios.get("https://sheltered-tundra-26707.herokuapp.com/category/สัตว์เลี้ยง");
     setData(response.data);
     setLoading(false);
   }
 
   const getMachine = async (e) => {
     setLoading(true);
-    const response = await axios.get("/category/เครื่องยนต์");
+    const response = await axios.get("https://sheltered-tundra-26707.herokuapp.com/category/เครื่องยนต์");
     setData(response.data);
     setLoading(false);
   }
 
   const getFood = async (e) => {
     setLoading(true);
-    const response = await axios.get("/category/อาหาร");
+    const response = await axios.get("https://sheltered-tundra-26707.herokuapp.com/category/อาหาร");
     setData(response.data);
     setLoading(false);
   }
 
   const getParty = async (e) => {
     setLoading(true);
-    const response = await axios.get("/category/สังสรรค์");
+    const response = await axios.get("https://sheltered-tundra-26707.herokuapp.com/category/สังสรรค์");
     setData(response.data);
     setLoading(false);
   }
 
   const getMovie = async (e) => {
     setLoading(true);
-    const response = await axios.get("/category/ภาพยนตร์");
+    const response = await axios.get("https://sheltered-tundra-26707.herokuapp.com/category/ภาพยนตร์");
     setData(response.data);
     setLoading(false);
   }
 
   const getMusic = async (e) => {
     setLoading(true);
-    const response = await axios.get("/category/ดนตรี");
+    const response = await axios.get("https://sheltered-tundra-26707.herokuapp.com/category/ดนตรี");
     setData(response.data);
     setLoading(false);
   }
 
   const getSeminar = async (e) => {
     setLoading(true);
-    const response = await axios.get("/category/สัมมนา");
+    const response = await axios.get("https://sheltered-tundra-26707.herokuapp.com/category/สัมมนา");
     setData(response.data);
     setLoading(false);
   }
