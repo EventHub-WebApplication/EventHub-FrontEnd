@@ -13,13 +13,11 @@ const Home = () => {
   const [loading, setLoading] = useState(true);
   const [visible, setVisible] = useState(4);
 
-  function sleep(ms) {
-    return new Promise(resolve => setTimeout(resolve, ms));
-  }
 
   useEffect(async () => {
     const response = await axios.get("/events");
     setData(response.data);
+    console.log(response.data);
     setLoading(false);
     console.log(response.data);
   }, []);
