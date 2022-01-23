@@ -113,7 +113,7 @@ const MyEvent = () => {
                 <hr />
                 <div>
                     {loading ? <Loader /> : data.map(createCard)}
-                    {(data.length === 0 && !loading) && <h5 style={{textAlign: "center"}}>คุณยังไม่มีปาร์ตี้ที่สร้าง</h5>}
+                    {(data.length === 0 && !loading) && <h5 style={{ textAlign: "center" }}>คุณยังไม่มีปาร์ตี้ที่สร้าง</h5>}
                 </div>
             </div>
             <div className="p-6 box" style={{ marginBottom: "5%" }}>
@@ -121,16 +121,20 @@ const MyEvent = () => {
                 <hr />
                 <div>
                     {loading ? <Loader /> : data2.map(createCard1)}
-                    {(data2.length === 0 && !loading) && <h5 style={{textAlign: "center"}}>คุณยังไม่มีปาร์ตี้ที่เข้าร่วม</h5>}
+                    {(data2.length === 0 && !loading) && <h5 style={{ textAlign: "center" }}>คุณยังไม่มีปาร์ตี้ที่เข้าร่วม</h5>}
                 </div>
             </div>
             <Card className="text-center">
                 <Card.Header>EventHub</Card.Header>
                 <Card.Body>
+                    <Card.Text style={{ color: "grey" }}>
+                        พัฒนาโดย
+                    </Card.Text>
                     <Card.Title>สรุจ สัตยานุรักษ์</Card.Title>
                     <Card.Text>
-                        นิสิตชั้นปีที่ 3 คณะวิศวกรรมซอฟท์แวร์และความรู้ นานาชาติ มหาวิทยาลัยเกษตรศาสตร์
+                        อีเมล saruj.s@ku.th - มือถือ 098-9107588
                     </Card.Text>
+                    <p></p>
                 </Card.Body>
                 <Card.Footer className="text-muted">นำเสนอ SCB10X</Card.Footer>
             </Card>

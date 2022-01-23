@@ -83,9 +83,9 @@ const NewEvent = () => {
                         </Form.Select>
                     </Form.Group>
 
-                    <Button variant="warning" onClick={handleCreate} style={{ width: "100%" }}>สร้าง</Button>
+                    <Button onClick={handleCreate} style={{ width: "100%", backgroundColor: "#532882", borderColor: "#532882" }}>สร้าง</Button>
                     <p></p>
-                    <Link to="/home" className="btn btn-danger" style={{ width: "100%" }}>กลับหน้าหลัก</Link>
+                    <Link to="/home" className="btn btn-danger" style={{ width: "100%", backgroundColor: "black", borderColor: "black"}}>กลับหน้าหลัก</Link>
 
                 </Form>
             </div>

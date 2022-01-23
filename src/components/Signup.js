@@ -57,11 +57,11 @@ const Registration = () => {
             <Form.Group className="concent mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="ฉันยอมรับเงื่อนไขและข้อตกลงเกี่ยวกับการใช้งาน" onChange={(e) => setConsent(e.target.value)}/>
             </Form.Group>
-            <Button variant="success" type="submit" style={{width: "100%", marginTop: "2%"}}>
+            <Button variant="success" type="submit" style={{width: "100%", marginTop: "2%", backgroundColor: "#532882"}}>
                 สร้างบัญชีผู้ใช้
             </Button>
             <hr />
-            <Link to="/" className="btn btn-danger" style={{width: "100%"}}> กลับหน้าแรก</Link>
+            <Link to="/" className="btn btn-danger" style={{width: "100%", backgroundColor: "#8A2976", borderColor: "#8A2976"}}> กลับหน้าแรก</Link>
         </Form>
         </div>
     </>

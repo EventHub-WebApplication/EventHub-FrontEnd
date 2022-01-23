@@ -8,12 +8,14 @@ import axios from "axios";
 import MyCard from "./Card";
 import Loader from "./Loader";
 
-
-
 const Home = () => {
   const [data, setData] = useState([]);
   const [loading, setLoading] = useState(true);
   const [visible, setVisible] = useState(4);
+
+  function sleep(ms) {
+    return new Promise(resolve => setTimeout(resolve, ms));
+  }
 
   useEffect(async () => {
     const response = await axios.get("/events");
@@ -21,6 +23,62 @@ const Home = () => {
     setLoading(false);
     console.log(response.data);
   }, []);
+
+  const getAll = async (e) => {
+    setLoading(true);
+    const response = await axios.get("/events");
+    setData(response.data);
+    setLoading(false);
+  }
+
+  const getPet = async (e) => {
+    setLoading(true);
+    const response = await axios.get("/category/สัตว์เลี้ยง");
+    setData(response.data);
+    setLoading(false);
+  }
+
+  const getMachine = async (e) => {
+    setLoading(true);
+    const response = await axios.get("/category/เครื่องยนต์");
+    setData(response.data);
+    setLoading(false);
+  }
+
+  const getFood = async (e) => {
+    setLoading(true);
+    const response = await axios.get("/category/อาหาร");
+    setData(response.data);
+    setLoading(false);
+  }
+
+  const getParty = async (e) => {
+    setLoading(true);
+    const response = await axios.get("/category/สังสรรค์");
+    setData(response.data);
+    setLoading(false);
+  }
+
+  const getMovie = async (e) => {
+    setLoading(true);
+    const response = await axios.get("/category/ภาพยนตร์");
+    setData(response.data);
+    setLoading(false);
+  }
+
+  const getMusic = async (e) => {
+    setLoading(true);
+    const response = await axios.get("/category/ดนตรี");
+    setData(response.data);
+    setLoading(false);
+  }
+
+  const getSeminar = async (e) => {
+    setLoading(true);
+    const response = await axios.get("/category/สัมมนา");
+    setData(response.data);
+    setLoading(false);
+  }
 
   function createCard(json) {
 
@@ -89,29 +147,44 @@ const Home = () => {
           <Nav.Link onClick={handleSubmit}>ออกจากระบบ</Nav.Link>
         </Nav>
       </Navbar>
+      <div className="container" style={{ marginTop: "100px", width: "88%" }}>
+        <Button variant="outline-primary" style={{ marginRight: "1%" }} onClick={getAll}>ทั้งหมด</Button>
+        <Button variant="outline-info" style={{ marginRight: "1%" }} onClick={getPet}>สัตว์เลี้ยง</Button>
+        <Button variant="outline-warning" style={{ marginRight: "1%" }} onClick={getMachine}>เครื่องยนต์</Button>
+        <Button variant="outline-danger" style={{ marginRight: "1%" }} onClick={getFood}>อาหาร</Button>
+        <Button variant="outline-success" style={{ marginRight: "1%" }} onClick={getParty}>สังสรรค์</Button>
+        <Button variant="outline-primary" style={{ marginRight: "1%" }} onClick={getMovie}>ภาพยนตร์</Button>
+        <Button variant="outline-info" style={{ marginRight: "1%" }} onClick={getMusic}>ดนตรี</Button>
+        <Button variant="outline-success" style={{ marginRight: "1%" }} onClick={getSeminar}>สัมมนา</Button>
+      </div>
       <div className="container" style={{ width: "88%" }}>
-        <div className="container" style={{ marginTop: "100px" }}>
+        <div className="container" style={{ marginTop: "2%" }}>
           <div className="row">
             <Link to="/new" className="btn btn-outline-info">สร้างปาร์ตี้</Link></div>
         </div>
 
         <div className="container" style={{ marginBottom: "5%" }}>
           <div className="row" style={{ justifyContent: "space-between" }}>
-            {loading ? <Loader /> : data.slice(0,visible).map(createCard)}
-            {loading ? <div></div> : <Button variant="info" type="submit" style={{width: "100%", marginTop: "3%"}} onClick={loadMore}>โหลดเพิ่ม</Button>}
+            {loading ? <Loader /> : data.slice(0, visible).map(createCard)}
+            {loading ? <div></div> : <Button variant="info" type="submit" style={{ width: "100%", marginTop: "3%" }} onClick={loadMore}>โหลดเพิ่ม</Button>}
           </div>
         </div>
       </div>
-      <Card className="text-center">
-        <Card.Header>EventHub</Card.Header>
-        <Card.Body>
-          <Card.Title>สรุจ สัตยานุรักษ์</Card.Title>
-          <Card.Text>
-            นิสิตชั้นปีที่ 3 คณะวิศวกรรมซอฟท์แวร์และความรู้ นานาชาติ มหาวิทยาลัยเกษตรศาสตร์
-          </Card.Text>
-        </Card.Body>
-        <Card.Footer className="text-muted">นำเสนอ SCB10X</Card.Footer>
-      </Card>
+      {loading ? <div></div> :
+        <Card className="text-center">
+          <Card.Header>EventHub</Card.Header>
+          <Card.Body>
+            <Card.Text style={{color: "grey"}}>
+              พัฒนาโดย
+            </Card.Text>
+            <Card.Title>สรุจ สัตยานุรักษ์</Card.Title>
+            <Card.Text>
+              อีเมล saruj.s@ku.th - มือถือ 098-9107588
+            </Card.Text>
+            <p></p>
+          </Card.Body>
+          <Card.Footer className="text-muted">นำเสนอ SCB10X</Card.Footer>
+        </Card>}
     </>
   );
 };

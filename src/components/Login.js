@@ -27,8 +27,7 @@ const Login = () => {
     return (
         <>
             <div className="p-4 box" >
-                <img className="logo" src="./image/logo.png"></img>
-                {/* <h2 className="mt-2" style={{textAlign: "center"}}>เข้าสู่ระบบ</h2> */}
+                <img className="logo" src="./image/eventHub.png" style={{width: "50%", height: "50%"}}></img>
                 {err && <Alert variant="danger">{err}</Alert>}
                 <Form onSubmit={handleSubmit}>
 
@@ -41,11 +40,11 @@ const Login = () => {
                         <Form.Label>รหัสผ่าน</Form.Label>
                         <Form.Control type="password" placeholder="กรอกรหัสผ่าน" onChange={(e) => setPassword(e.target.value)} />
                     </Form.Group>
-                    <Button variant="primary" type="submit" style={{width: "100%"}}>
+                    <Button type="submit" style={{width: "100%", backgroundColor: "#532882"}}>
                         เข้าสู่ระบบ
                     </Button>
                     <hr />
-                    <Link to="/registration" className="btn btn-success" style={{width: "100%"}}>สร้างบัญชีผู้ใช้</Link>
+                    <Link to="/registration" className="btn btn-success" style={{width: "100%", backgroundColor: "#8A2976", borderColor: "#8A2976"}}>สร้างบัญชีผู้ใช้</Link>
                 </Form>
             </div>
         </>
