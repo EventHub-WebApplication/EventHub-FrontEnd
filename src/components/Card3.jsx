@@ -21,14 +21,14 @@ function MyCard3(prop) {
 
 
   const handleJoin = async (e) => {
-    const url = "/events/" + prop.id + "/join/" + user.email;
+    const url = "https://sheltered-tundra-26707.herokuapp.com/events/" + prop.id + "/join/" + user.email;
     axios.patch(url);
     alert("กด OK เพื่อยืนยันเข้าร่วมปาร์ตี้ " + prop.name)
     window.location.reload(false);
   }
 
   const handleCancel = async (e) => {
-    const url = "/events/" + prop.id + "/cancel/" + user.email;
+    const url = "https://sheltered-tundra-26707.herokuapp.com/events/" + prop.id + "/cancel/" + user.email;
     axios.patch(url);
     alert("กด OK เพื่อยกเลิกการเข้าร่วมปาร์ตี้ " + prop.name)
     window.location.reload(false);

@@ -26,7 +26,7 @@ function MyCard(prop) {
 
   const handleJoin = async (e) => {
     if (prop.amount > 0) {
-      const url = "/events/" + prop.id + "/join/" + user.email;
+      const url = "https://sheltered-tundra-26707.herokuapp.com/events/" + prop.id + "/join/" + user.email;
       const response = await axios.patch(url);
       if (response.data === "Event is already full") {
         alert("ไม่สามารถเข้าร่วมเนื่องจากปาร์ตี้เต็มแล้ว");
@@ -43,7 +43,7 @@ function MyCard(prop) {
   }
 
   const handleCancel = async (e) => {
-    const url = "/events/" + prop.id + "/cancel/" + user.email;
+    const url = "https://sheltered-tundra-26707.herokuapp.com/events/" + prop.id + "/cancel/" + user.email;
     axios.patch(url);
     alert("กด OK เพื่อยกเลิกการเข้าร่วมปาร์ตี้ " + prop.name)
     window.location.reload(false);

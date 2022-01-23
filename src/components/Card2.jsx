@@ -13,7 +13,7 @@ function MyCard2(prop) {
       }, [])
 
     const handleDelete = async (e) => {
-        const url = "/events/" + prop.id;
+        const url = "https://sheltered-tundra-26707.herokuapp.com/events/" + prop.id;
         axios.delete(url);
         alert("กด OK เพื่อยืนยัน")
         window.location.reload(false);

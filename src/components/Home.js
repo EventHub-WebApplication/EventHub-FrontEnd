@@ -15,9 +15,9 @@ const Home = () => {
 
 
   useEffect(async () => {
-    const response = await axios.get("/events");
+    const response = await axios.get("https://sheltered-tundra-26707.herokuapp.com/events");
     setData(response.data);
-    console.log(response.data);
+    
     setLoading(false);
     console.log(response.data);
   }, []);

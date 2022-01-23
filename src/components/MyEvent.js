@@ -16,9 +16,9 @@ const MyEvent = () => {
     const [loading, setLoading] = useState(true);
 
     useEffect(async () => {
-        const response = await axios.get("/ownedEvent/" + user.email);
+        const response = await axios.get("https://sheltered-tundra-26707.herokuapp.com/ownedEvent/" + user.email);
         setData(response.data);
-        const response2 = await axios.get("/paticipatedEvent/" + user.email);
+        const response2 = await axios.get("https://sheltered-tundra-26707.herokuapp.com/paticipatedEvent/" + user.email);
         setData2(response2.data);
         console.log(response2.data);
         setLoading(false);
