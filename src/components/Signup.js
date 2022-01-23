@@ -37,7 +37,9 @@ const Registration = () => {
   }
   return (
     <>
-        <h1>สร้างบัญชีผู้ใช้</h1>
+    <div className="p-5 box" >
+        <h3 style={{marginBottom: "3%", textAlign: "center", marginTop: "2%"}}>สร้างบัญชีผู้ใช้</h3>
+        <hr />
         {err && <Alert variant="danger">{err}</Alert>}
         <Form onSubmit={handleSubmit}>
             <Form.Group className="mb-3" controlId="formBasicEmail">
@@ -52,15 +54,16 @@ const Registration = () => {
                 <Form.Label>ยืนยันรหัสผ่าน</Form.Label>
                 <Form.Control type="password" placeholder="กรอกรหัสผ่านอีกครั้ง" onChange={(e) => setPasswordCon(e.target.value)}/>
             </Form.Group>
-            <Form.Group className="mb-3" controlId="formBasicCheckbox">
+            <Form.Group className="concent mb-3" controlId="formBasicCheckbox">
                 <Form.Check type="checkbox" label="ฉันยอมรับเงื่อนไขและข้อตกลงเกี่ยวกับการใช้งาน" onChange={(e) => setConsent(e.target.value)}/>
             </Form.Group>
-            <Button variant="success" type="submit">
+            <Button variant="success" type="submit" style={{width: "100%", marginTop: "2%"}}>
                 สร้างบัญชีผู้ใช้
             </Button>
-            <p></p>
-            <Link to="/" className="btn btn-danger"> กลับหน้าแรก</Link>
+            <hr />
+            <Link to="/" className="btn btn-danger" style={{width: "100%"}}> กลับหน้าแรก</Link>
         </Form>
+        </div>
     </>
   );
 };
