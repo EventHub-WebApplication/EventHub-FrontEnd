@@ -132,7 +132,7 @@ const MyEvent = () => {
                     </Card.Text>
                     <Card.Title>สรุจ สัตยานุรักษ์</Card.Title>
                     <Card.Text>
-                        อีเมล saruj.s@ku.th - โทร 098-9107588
+                        อีเมล jomsaruj@gmail.com - โทร 098-9107588
                     </Card.Text>
                     <p></p>
                 </Card.Body>
