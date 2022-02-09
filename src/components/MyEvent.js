@@ -3,8 +3,8 @@ import { Navbar, Nav, Card } from "react-bootstrap";
 import { useNavigate } from "react-router";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import MyCard2 from "./Card2"
-import MyCard3 from "./Card3"
+import MyCard2 from "./CardJoined"
+import MyCard3 from "./CardPaticipated"
 import Loader from "./Loader";
 
 

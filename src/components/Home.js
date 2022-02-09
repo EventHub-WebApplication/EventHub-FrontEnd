@@ -5,7 +5,7 @@ import { useNavigate } from "react-router";
 import { Link } from "react-router-dom";
 import { useState, useEffect } from "react";
 import axios from "axios";
-import MyCard from "./Card";
+import MyCard from "./CardHome";
 import Loader from "./Loader";
 
 const Home = () => {
