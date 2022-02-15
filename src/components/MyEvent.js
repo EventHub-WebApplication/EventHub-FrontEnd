@@ -136,7 +136,6 @@ const MyEvent = () => {
                     </Card.Text>
                     <p></p>
                 </Card.Body>
-                <Card.Footer className="text-muted">นำเสนอ SCB10X</Card.Footer>
             </Card>
 
         </>
