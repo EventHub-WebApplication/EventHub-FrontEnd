@@ -8,4 +8,4 @@ EventHub web application is an application where user can find fascinating event
 
 ### Visit
 
-https://event-hub-front-end-project.vercel.app/
+https://event-hub-front-end-eight.vercel.app/
